@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画布</title>
+    <style type="text/css">
+        canvas{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="Mycanvas" width="400px" height="400px">
+
+    </canvas>
+    <script type="text/javascript">
+    var canvas=document.getElementById("Mycanvas");
+    var obj=canvas.getContext("2d");//2D画笔
+    // var colorobj=obj.createLinearGradient(0,0,100,0);
+    var colorobj=obj.createRadialGradient(50,50,10,50,50,50);
+
+    colorobj.addColorStop(0,"red");
+    colorobj.addColorStop(0.5,"blue");
+    colorobj.addColorStop(1,"green");
+
+
+    obj.shadowColor="rgb(11,25,9)";
+    obj.shadowOffsetX=3;
+    obj.shadowOffsetY=3;
+    obj.shadowBlur=3;
+    obj.fillStyle=colorobj;
+    obj.strokeStyle="black";
+    obj.fillRect(0,0,100,100);
+    obj.strokeRect(100,100,100,100);
+
+
+
+
+    </script>
+    <p>琪亚娜</p>
+
+</body>
+</html>
